@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package common;
+
+option go_package = "github.com/Ilhamkawe/commerce-proto/protogen/go/common";
+
+message BaseResponse {
+    int64 status_code = 1;
+    string message = 2;
+    bool is_error = 3;
+}

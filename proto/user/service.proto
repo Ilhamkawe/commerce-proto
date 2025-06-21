@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "github.com/Ilhamkawe/commerce-proto/protogen/go/user";
+import "proto/user/type/user.proto";
+import "google/protobuf/empty.proto";
+
+
+service UserService {
+    rpc Register (RegisterRequest) returns (BooleanResponse);
+    rpc Login (LoginRequest) returns (LoginResponse);
+    rpc GetUserDetail (google.protobuf.Empty) returns (DetailResponse);
+    rpc Logout (google.protobuf.Empty) returns (BooleanResponse);
+}
+

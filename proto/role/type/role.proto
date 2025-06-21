@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package role;
+
+option go_package = "github.com/Ilhamkawe/commerce-proto/protogen/go/role";
+import "google/protobuf/timestamp.proto";
+import "proto/common/base_response.proto";
+
+message Role {
+    int64 id = 1;
+    string name = 2;
+    string code = 3;
+    google.protobuf.Timestamp createdAt = 16;
+    google.protobuf.Timestamp updatedAt = 17;
+    string createdBy = 18;
+    string updatedBy = 19;
+    google.protobuf.Timestamp deletedAt = 20;
+    string deletedBy = 21;
+    bool isDeleted = 22;
+}
+
+message RoleResponse {
+    common.BaseResponse meta = 1;
+    Role data = 2;
+}
+
+message IDRequest {
+    int64 id = 1;
+}
+
+message SaveRequest{
+    int64 id = 1;
+    string name = 2;
+    string code = 3;
+}
+
+
+message BooleanData {
+    bool status = 1;
+    string message = 2;
+}
+message BooleanResponse {
+    common.BaseResponse meta = 1;
+    BooleanData data = 2;
+}
