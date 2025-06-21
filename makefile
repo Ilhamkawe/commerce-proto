@@ -43,6 +43,8 @@ protoc-go:
 	$(PROTO_FILES)
 	@printf "\033[36mProtogen succesfuly generated\033[0m\n"
 
+.PHONY: build
+build: clean protoc-go
 
 .PHONY: pipeline-init
 pipeline-init:
